@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 -->
+    <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="./node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+/*
+vue中通过指令v-for可以进行数组或者对象的遍历，在react中如何遍历数组
+map方法 注意点
+key 帮助REact 识别那些元素改变了 比如被添加或者删除
+key 值相同的借点会复用  
+
+*/
+const arr=[1,2,3,4,5]
+ReactDOM.render(<div>
+    {
+        arr.map((item,index)=>{
+            return <p key={index}>{item}</p>
+        })
+    }
+    
+    </div>,document.getElementById("app") )
+
+    
+    </script>
+</body>
+</html>

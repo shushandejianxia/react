@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 -->
+    <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="./node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+//js的原理是shme
+//首先jsx的内部通过babel代码进行解析了(React.createElment)-->虚拟dom-->ReactDOM.render()
+//将虚拟dom 树渲染成dom树
+
+
+//Babel会将JSX 转译成一个明为React.createElement()函数调用
+// 
+const a = React.createElement("h2",{className:'abc'},"我是h2",
+        React.createElement("span",{},"so"),
+        React.createElement("a",{},"a!")
+)
+
+ReactDOM.render(a,document.getElementById("app"))
+    </script>
+</body>
+</html>

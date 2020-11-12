@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 -->
+    <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="./node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+/*
+react中可以通过{}方法渲染一个变量。只要某个地方用到了js代码急需要用得到{}
+{}放数组  数组内容就会拼接
+{}中放入boolean|null|underfined值都不会渲染
+{}中不能直接放入json对象 会报错
+*/
+const a=10
+
+ReactDOM.render(<div>
+    <p>{a}</p>
+    <p>{"world".substr(0,1)} </p>
+    <p>{[1,2,3].map(item=>item+"!")}</p>
+    <p>{function(){return"我是hanshu"}()}</p>
+
+        {/* <p>{ {a:2} }</p> */}
+
+    </div>,document.getElementById("app"))
+    
+    </script>
+</body>
+</html>
